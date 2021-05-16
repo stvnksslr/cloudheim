@@ -41,7 +41,7 @@ Assuming you have taken care of the networking (port-forwarding if needed, LoadB
 
 - In the steam UI (NOT IN GAME) go to view->servers->add favorite
 
-  - set the port to 2457 ([reason for that here](https://github.com/lloesche/valheim-server-docker/discussions/32#discussioncomment-371306))
+  - set the port to 32456 ([reason for that here](https://github.com/lloesche/valheim-server-docker/discussions/32#discussioncomment-371306))
 
 - To connect double click the server in the steam servers explorer
 
