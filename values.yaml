@@ -5,8 +5,6 @@ imageTag: latest
 
 replicaCount: 1
 
-# Configure resource requests and limits
-# ref: http://kubernetes.io/docs/user-guide/compute-resources/
 resources:
   requests:
     memory: 512Mi
@@ -22,8 +20,11 @@ valheimServer:
   backupsInterval: 43200 # every 12 hours
   backupsDirectory: /config/backups
   backupsMaxAge: 3 # 3 days
-  serviceType: LoadBalancer
+  serviceType: NodePort
   nodeSelector: {}
+  mods:
+    bepinex: false
+    valheimPlus: false
 
 persistence:
   config:

@@ -48,7 +48,15 @@ spec:
           value: {{ .Values.valheimServer.backupsDirectory | quote }}
         - name: BACKUPS_MAX_AGE
           value: {{ .Values.valheimServer.backupsMaxAge | quote }}
-
+        {{- if eq .Values.valheimServer.mods.bepinex true }}
+        - name: BEPINEX
+          value: "true"
+        {{- end }}
+        {{- if eq .Values.valheimServer.mods.valheimPlus true }}
+        - name: VALHEIMPLUS
+          value: "true"
+        {{- end }}
+        
         ports:
         - name: valheim-1
           containerPort: {{ .Values.valheimServer.serverPort | int }}
