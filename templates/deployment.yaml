@@ -48,6 +48,10 @@ spec:
           value: {{ .Values.valheimServer.backupsDirectory | quote }}
         - name: BACKUPS_MAX_AGE
           value: {{ .Values.valheimServer.backupsMaxAge | quote }}
+        - name: STATUS_HTTP
+          value: {{ .Values.valheimServer.status }}
+        - name: ADMINLIST_IDS
+          value: {{ .Values.valheimServer.admins }}
         {{- if eq .Values.valheimServer.mods.bepinex true }}
         - name: BEPINEX
           value: "true"
