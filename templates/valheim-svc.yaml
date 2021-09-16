@@ -23,6 +23,10 @@ spec:
     port: {{ .Values.valheimServer.serverPort | int | add 2 }}
     targetPort: valheim-3
     protocol: UDP
+  - name: valheim-4
+    port: {{ .Values.valheimServer.statusPort | int | add 2 }}
+    targetPort: valheim-4
+    protocol: tcp
   {{- else }}
   - name: valheim-1
     port: {{ .Values.valheimServer.serverPort | int }}
@@ -39,6 +43,11 @@ spec:
     targetPort: valheim-3
     nodePort: {{ .Values.valheimServer.serverPort | int | add 2 }}
     protocol: UDP
+  - name: valheim-4
+    port: {{ .Values.valheimServer.statusPort | int | add 2 }}
+    targetPort: valheim-4
+    nodePort: {{ .Values.valheimServer.statusPort | int | add 2 }}
+    protocol: TCP
   {{- end }}
   selector:
     app: {{ template "valheim.fullname" . }}

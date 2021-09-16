@@ -72,9 +72,9 @@ spec:
         - name: valheim-3
           containerPort: {{ .Values.valheimServer.serverPort | int | add 2 }}
           protocol: UDP
+        # webserver port  
         - name: valheim-4
           containerPort: {{ .Values.valheimServer.statusPort | int }}
-          protocol: TCP
         
         volumeMounts:
         - name: config
