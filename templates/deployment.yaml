@@ -78,6 +78,7 @@ spec:
         volumeMounts:
         - name: config
           mountPath: /config
+          
       volumes:
       - name: config
         persistentVolumeClaim:
