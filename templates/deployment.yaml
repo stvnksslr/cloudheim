@@ -52,6 +52,7 @@ spec:
           value: {{ .Values.valheimServer.status | quote}}
         - name: STATUS_HTTP_PORT
           value: {{ .Values.valheimServer.statusPort | quote}}
+
         {{- if eq .Values.valheimServer.mods.bepinex true }}
         - name: BEPINEX
           value: "true"
@@ -71,7 +72,7 @@ spec:
         - name: valheim-3
           containerPort: {{ .Values.valheimServer.serverPort | int | add 2 }}
           protocol: UDP
-        - name: valheim-3
+        - name: valheim-4
           containerPort: {{ .Values.valheimServer.statusPort | int }}
           protocol: TCP
         volumeMounts:
