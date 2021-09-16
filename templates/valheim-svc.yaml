@@ -26,7 +26,7 @@ spec:
   - name: valheim-4
     port: {{ .Values.valheimServer.statusPort | int | add 2 }}
     targetPort: valheim-4
-    protocol: tcp
+    protocol: TCP
   {{- else }}
   - name: valheim-1
     port: {{ .Values.valheimServer.serverPort | int }}
