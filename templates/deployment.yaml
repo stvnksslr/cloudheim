@@ -73,7 +73,7 @@ spec:
           containerPort: {{ .Values.valheimServer.serverPort | int | add 2 }}
           protocol: UDP
         # webserver port  
-        - name: valheim-4
+        - name: valheim-web
           containerPort: {{ .Values.valheimServer.statusPort | int }}
         
         volumeMounts:
