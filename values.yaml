@@ -23,6 +23,7 @@ valheimServer:
   serviceType: NodePort
   nodeSelector: {}
   status: false
+  statusPort: 8080
   admins: []
 
   mods:
