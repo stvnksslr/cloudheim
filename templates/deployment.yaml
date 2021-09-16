@@ -28,7 +28,7 @@ spec:
         image: "{{ .Values.image }}:{{ .Values.imageTag }}"
         imagePullPolicy: Always
         resources:
-{{ toYaml .Values.resources | indent 10 }}
+        {{ toYaml .Values.resources | indent 10 }}
         env:
         - name: SERVER_NAME
           value: {{ .Values.valheimServer.serverName | quote }}
@@ -75,10 +75,11 @@ spec:
         - name: valheim-4
           containerPort: {{ .Values.valheimServer.statusPort | int }}
           protocol: TCP
+        
         volumeMounts:
         - name: config
           mountPath: /config
-          
+
       volumes:
       - name: config
         persistentVolumeClaim:
