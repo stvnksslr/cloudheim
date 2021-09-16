@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: v2
 name: cloudheim
 version: 1.1.1
 description: Valheim dedicated server.
